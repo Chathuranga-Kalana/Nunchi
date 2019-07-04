@@ -1,0 +1,267 @@
+{% include 'common/header.html' %}
+{% set active_page = "index" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Chathuranga Kalana">
+    <meta name="keywords" content="Nunchi">
+
+    <!-- Title Page-->
+    <title>Dashboard</title>
+</head>
+
+<body class="animsition">
+
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                 <div class="float-right">  <a href="http://127.0.0.1:5000/report"><i class="zmdi zmdi-print zmdi-hc-3x"></i></a></div>
+                    <form action="http://127.0.0.1:5000/upload" enctype=multipart/form-data method="POST">
+                        <div class="row">
+
+                            <div class="col-md-12 row">
+                                <div class="overview-wrap col-md-6">
+                                    <h2 class="title-1">overview</h2>
+                                </div>
+
+                                <div class="col-md-6 row">
+                                    <div class="col-md-6">
+                                        <input type="file" id="file" name="file" class="form-control-file">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="au-btn au-btn-icon au-btn--blue" type="submit">
+                                            <i class="zmdi zmdi-upload"></i>Upload
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div>
+
+                        <p>
+
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+
+                                    {% for message in messages %}
+                                        <p style="color: red">{{ message }}</p>
+                                    {% endfor %}
+
+                                {% endif %}
+                            {% endwith %}
+                        </p>
+
+                    </div>
+                    <div class="row m-t-25 ">
+                        <div class="col-sm-6 col-lg-3 d-flex">
+                            <div class="overview-item overview-item--c1" style="width:100%">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-account-o"></i>
+                                        </div>
+                                        <div class="text">
+                                            {% for count in count %}
+                                            <h2>{{ count.count }}</h2>
+                                            {% endfor %}
+                                        </div>
+                                        <div><h3 style="color: white">Employees </h3></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 d-flex">
+                            <div class="overview-item overview-item--c2">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-shopping-cart"></i>
+                                        </div>
+                                        <div class="text">
+                                            {% for count in count %}
+                                            <h2>{{ count.work_load }}</h2>
+                                            {% endfor %}
+                                            <span>Avg. Monthly lost workload</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 d-flex">
+                            <div class="overview-item overview-item--c3">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-face"></i>
+                                        </div>
+                                        <div class="text">
+                                            {% for count in count %}
+                                            <h3 style="color: white">Employee ID: {{ count.eID }}</h3>
+                                            {% endfor %}
+                                            <span>Most Absented Employee</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 d-flex">
+                            <div class="overview-item overview-item--c4">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-money"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>$1,060,386</h2>
+                                            <span>total lost</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="au-card recent-report">
+                                <div class="au-card-inner">
+                                    <h3 class="title-2">Reason for Absenteeism</h3>
+                                    <div style="width: 100%; height: 100%">
+                                        {% for count in count %}
+                                            <img src="{{ url_for('static', filename='images/overall/'+count.dategraph+'/Reason for absence.png') }}" alt="Reason for absence"/>
+                                            {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <h2 class="title-1">Reasons explain</h2>
+                <div class="row">
+                        <div class="col-lg-4 d-flex ">
+                            <div class="au-card chart-percent-card">
+                                <div class="au-card-inner">
+                                    <div>
+
+                                        <span>0) Certain infectious and parasitic diseases. </span><br>
+                                        <span>1) Neoplasms. </span><br>
+                                        <span>2) Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism.</span><br>
+                                        <span>3) Endocrine, nutritional and metabolic diseases. </span><br>
+                                        <span>4) Mental and behavioural disorders.</span><br>
+                                        <span>5) Diseases of the nervous system.</span><br>
+                                        <span>6) Diseases of the eye and adnexa.</span><br>
+                                        <span>7) Diseases of the eye and adnexa.</span><br>
+                                        <span>8) Diseases of the ear and mastoid process.</span><br>
+                                        <span>9) Diseases of the circulatory system.</span><br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-lg-4 d-flex ">
+                            <div class="au-card chart-percent-card">
+                                <div class="au-card-inner">
+                                    <div>
+                                        <span>10) Diseases of the respiratory system.</span><br>
+                                        <span>11) Diseases of the digestive system. </span><br>
+                                        <span>12) Diseases of the skin and subcutaneous tissue. </span><br>
+                                        <span>13) Diseases of the musculoskeletal system and connective tissue.</span><br>
+                                        <span>14) Diseases of the genitourinary system. </span><br>
+                                        <span>15) Pregnancy, childbirth and the puerperium.</span><br>
+                                        <span>16) Certain conditions originating in the perinatal period.</span><br>
+                                        <span>17) Congenital malformations, deformations and chromosomal abnormalities.</span><br>
+                                        <span>18) Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified.</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-lg-4 d-flex ">
+                            <div class="au-card chart-percent-card">
+                                <div class="au-card-inner">
+                                    <div>
+                                        <span>19) Injury, poisoning and certain other consequences of external causes .</span><br>
+                                        <span>20) External causes of morbidity and mortality.</span><br>
+                                        <span>21) Factors influencing health status and contact with health services. </span><br>
+                                        <span>22) patient follow-up . </span><br>
+                                        <span>23) medical consultation.</span><br>
+                                        <span>24) blood donation. </span><br>
+                                        <span>25) laboratory examination .</span><br>
+                                        <span>26) unjustified absence.</span><br>
+                                        <span>27) physiotherapy.</span><br>
+                                        <span>28) dental consultation.</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="row">
+                        <div class="col-lg-8 d-flex">
+                            <div class="au-card recent-report">
+                                <div class="au-card-inner">
+                                    <h3 class="title-2">Absenteeism By month</h3>
+                                    <div style="width: 100%; height: 100%">
+                                        {% for count in count %}
+                                            <img src="{{ url_for('static', filename='images/overall/'+count.dategraph+'/Month of absence.png') }}" alt="Month of absence"/>
+                                            {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex">
+                            <div class="au-card chart-percent-card">
+                                <div class="au-card-inner">
+                                    <h3 class="title-2">Few Solutions</h3><br>
+                                    <div>
+                                       <ul>
+                                            <li>Reduce office stress.</li>
+                                            <li>Offer a generous paid time-off policy.</li>
+                                            <li>Invest in Child Care</li>
+                                            <li>Reward Good Attendance</li>
+                                            <li>Provide Employee Support</li>
+                                            <li>Display Significant Sporting Events from Within the Contact Centre</li>
+                                            <li>Allow Workers to Trade Shifts</li>
+                                            <li>Flexible Scheduling</li>
+                                            <li>Perfect Attendance = Free Day Off</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Chathuranga Kalana. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
+    </div>
+
+</div>
+
+</body>
+{% include 'common/footer.html' %}
+</html>
+<!-- end document-->

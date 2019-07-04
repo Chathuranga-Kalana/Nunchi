@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>500 Error</title>
+     <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap CSS-->
+    <link href="../../static/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="../static/css/500page.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="error-500" data-text="Oh no! Our spaghetti code is not working properly. We will be back soon!">
+    <spaguetti>
+    <fork></fork>
+    <meat></meat>
+    <pasta></pasta>
+    <plate></plate>
+  </spaguetti>
+</div>
+
+<script>
+   const error = document.querySelector(".error-500");
+let i = 0, data = "", text = error.getAttribute("data-text");
+
+let typing = setInterval(() => {
+  if(i == text.length){
+    clearInterval(typing);
+  }else{
+    data += text[i];
+    document.querySelector(".error-500").setAttribute("data-text", data);
+    i++;
+  }
+}, 100);
+</script>
+<!-- Jquery JS-->
+<script src="../static/vendor/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap JS-->
+<script src="../static/vendor/bootstrap-4.1/popper.min.js"></script>
+<script src="../static/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+</body>
+
+</html>

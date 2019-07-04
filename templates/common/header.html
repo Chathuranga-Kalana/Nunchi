@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Fontfaces CSS-->
+
+    <link href="../../static/css/font-face.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    {#     <link href="{{ url_for('static', filename='css/font-face.css') }}" rel="stylesheet"media="all" >#}
+    {#     <link href="{{ url_for('static', filename='vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet"media="all" >#}
+    {#     <link href="{{ url_for('static', filename='vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet"media="all" >#}
+    {#     <link href="{{ url_for('static', filename='vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet"media="all" >#}
+
+    <!-- Bootstrap CSS-->
+    <link href="../../static/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    {#    <link href="{{ url_for('static', filename='vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet"media="all" >#}
+
+    <!-- Vendor CSS-->
+    {#    <link href="{{ url_for('static', filename='vendor/animsition/animsition.min.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/wow/animate.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/slick/slick.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet"media="all" >#}
+    <link href="../../static/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"
+          media="all">
+    <link href="../../static/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="../../static/css/theme.css" rel="stylesheet" media="all">
+    {#    <link href="{{ url_for('static', filename='css/theme.css') }}" rel="stylesheet" >#}
+
+</head>
+<body class="animsition">
+<div class="page-wrapper">
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
+        <div class="header-mobile__bar">
+            <div class="container-fluid">
+                <div class="header-mobile-inner">
+                    <a class="logo" href="index.html">
+                        {#                        <img src="{{ url_for('static', filename='images/icon/logo.jpg') }}" alt="Nunchi"/>#}
+                        <img src="../../static/images/icon/logo.jpg') }}" alt="Nunchi"/>
+                    </a>
+                    <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+                <ul class="navbar-mobile__list list-unstyled">
+                    <li class="has-sub">
+                        <a class="js-arrow" href="http://127.0.0.1:5000/dash">
+                            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5000/userinfo">
+                            <i class="fas fa-chart-bar"></i>Employees </a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <i class="fas fa-table"></i>Tables</a>
+                    </li>
+                    <li>
+                        <a href="form.html">
+                            <i class="far fa-check-square"></i>Forms</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-calendar-alt"></i>Calendar</a>
+                    </li>
+                    <li>
+                        <a href="map.html">
+                            <i class="fas fa-map-marker-alt"></i>Maps</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block" >
+        <div class="logo">
+            <a href="#">
+                <img src="../../static/images/icon/logo.jpg" alt="Nunchi"/>
+                {#                <img src="{{ url_for('static', filename='images/icon/logo.jpg') }}" alt="Nunchi"/>#}
+            </a>
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="{{ 'active' if active_page == 'index' else '' }} has-sub">
+                        <a class="js-arrow" href="http://127.0.0.1:5000/dash">
+                            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                    </li>
+                    <li class="{{ 'active' if active_page == 'employee' else '' }}">
+                        <a href="http://127.0.0.1:5000/userinfo">
+                            <i class="fas fa-chart-bar"></i>Employees</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5000/prediction">
+                            <i class="fas fa-table"></i>Prediction</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div style="background-image: url(../../static/images/icon/sidebar.jpg);opacity: 0.5;filter: alpha(opacity=50);"></div>
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="header-wrap">
+                    <form class="form-header" action="" method="">
+
+                    </form>
+                    <div class="header-button">
+                        <div class="noti-wrap">
+                            <div class="noti__item js-item-menu">
+                                <i class="zmdi zmdi-notifications"></i>
+
+                                <div class="notifi-dropdown js-dropdown">
+
+                                    <div class="notifi__item">
+                                        <div class="bg-c3 img-cir img-40">
+                                            <i class="zmdi zmdi-file-text"></i>
+                                        </div>
+                                        <div class="content">
+                                            <p>You got a new file</p>
+                                            <span class="date">April 12, 2018 06:50</span>
+                                        </div>
+                                    </div>
+                                    <div class="notifi__footer">
+                                        <a href="#">All notifications</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-wrap">
+                            <div class="account-item clearfix js-item-menu">
+                                <div class="image">
+
+                                    {#                                        <img src="{{ url_for('static', filename='images/icon/my.jpg') }}" alt="Chathuranga Kalana"/>#}
+                                    <img src="../../static/images/icon/my.jpg" alt="Chathuranga Kalana"/>
+                                </div>
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#">Chathuranga Kalana</a>
+                                </div>
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
+                                        <div class="image">
+                                            <a href="#">
+                                                {#                                                    <img src="{{ url_for('static', filename='images/icon/my.jpg') }}" alt="Chathuranga Kalana"/>#}
+                                                <img src="../../static/images/icon/my.jpg" alt="Chathuranga Kalana"/>
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <h5 class="name">
+                                                <a href="#">Chathuranga Kalana</a>
+                                            </h5>
+                                            <span class="email">chathurangakalana@gmail.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__footer">
+                                        <a href="http://127.0.0.1:5000/logout">
+                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+<!-- HEADER DESKTOP-->
+</body>
+</html>

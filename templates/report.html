@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Chathuranga Kalana">
+    <meta name="keywords" content="Nunchi">
+
+    <link href="../static/css/font-face.css" rel="stylesheet" media="all">
+    <link href="../static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="../static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    {#     <link href="{{ url_for('static', filename='css/font-face.css') }}" rel="stylesheet"media="all" >#}
+    {#     <link href="{{ url_for('static', filename='vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet"media="all" >#}
+    {#     <link href="{{ url_for('static', filename='vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet"media="all" >#}
+    {#     <link href="{{ url_for('static', filename='vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet"media="all" >#}
+
+    <!-- Bootstrap CSS-->
+    <link href="../static/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    {#    <link href="{{ url_for('static', filename='vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet"media="all" >#}
+
+    <!-- Vendor CSS-->
+    {#    <link href="{{ url_for('static', filename='vendor/animsition/animsition.min.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/wow/animate.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/slick/slick.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}" rel="stylesheet"media="all" >#}
+    {#    <link href="{{ url_for('static', filename='vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet"media="all" >#}
+
+    <link href="../static/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"
+          media="all">
+
+    <!-- Main CSS-->
+    <link href="../static/css/theme.css" rel="stylesheet" media="all">
+    <!-- Title Page-->
+    <title>Dashboard</title>
+</head>
+
+<body class="animsition">
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="au-card recent-report">
+                <div class="au-card-inner">
+                    <h3 class="title-2">Reason for Absenteeism</h3>
+                    <div style="width: 100%; height: 100%">
+                        {% if dategraph %}
+                            <img src="../static/images/overall/{{ dategraph }}/Reason for absence.png"
+                                 alt="Reason for absence"/>
+                            {#                                            <img src="{{ url_for('static', filename='images/overall/'+dategraph+'/Reason for absence.png') }}" alt="Reason for absence"/>#}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h2 class="title-1">Reasons explain</h2>
+            <div class="col-lg-12 d-flex ">
+                <div class="au-card chart-percent-card">
+                    <div class="au-card-inner">
+                        <div>
+
+                            <span>0) Certain infectious and parasitic diseases. </span><br>
+                            <span>1) Neoplasms. </span><br>
+                            <span>2) Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism.</span><br>
+                            <span>3) Endocrine, nutritional and metabolic diseases. </span><br>
+                            <span>4) Mental and behavioural disorders.</span><br>
+                            <span>5) Diseases of the nervous system.</span><br>
+                            <span>6) Diseases of the eye and adnexa.</span><br>
+                            <span>7) Diseases of the eye and adnexa.</span><br>
+                            <span>8) Diseases of the ear and mastoid process.</span><br>
+                            <span>9) Diseases of the circulatory system.</span><br>
+                            <span>10) Diseases of the respiratory system.</span><br>
+                            <span>11) Diseases of the digestive system. </span><br>
+                            <span>12) Diseases of the skin and subcutaneous tissue. </span><br>
+                            <span>13) Diseases of the musculoskeletal system and connective tissue.</span><br>
+                            <span>14) Diseases of the genitourinary system. </span><br>
+                            <span>15) Pregnancy, childbirth and the puerperium.</span><br>
+                            <span>16) Certain conditions originating in the perinatal period.</span><br>
+                            <span>17) Congenital malformations, deformations and chromosomal abnormalities.</span><br>
+                            <span>18) Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified.</span><br>
+                            <span>19) Injury, poisoning and certain other consequences of external causes .</span><br>
+                            <span>20) External causes of morbidity and mortality.</span><br>
+                            <span>21) Factors influencing health status and contact with health services. </span><br>
+                            <span>22) patient follow-up. </span><br>
+                            <span>23) medical consultation.</span><br>
+                            <span>24) blood donation. </span><br>
+                            <span>25) laboratory examination .</span><br>
+                            <span>26) unjustified absence.</span><br>
+                            <span>27) physiotherapy.</span><br>
+                            <span>28) dental consultation.</span><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="au-card recent-report">
+                <div class="au-card-inner">
+                    <h3 class="title-2">Absenteeism By month</h3>
+                    <div style="width: 100%; height: 100%">
+                        {% if dategraph %}
+                            <img src="../static/images/overall/{{ dategraph }}/Month of absence.png"
+                                 alt="Month of absence"/>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="au-card chart-percent-card">
+                <div class="au-card-inner">
+                    <h3 class="title-2">Few Solutions</h3><br>
+                    <div>
+                        <ul>
+                            <li>Reduce office stress.</li>
+                            <li>Offer a generous paid time-off policy.</li>
+                            <li>Invest in Child Care</li>
+                            <li>Reward Good Attendance</li>
+                            <li>Provide Employee Support</li>
+                            <li>Display Significant Sporting Events from Within the Contact Centre</li>
+                            <li>Allow Workers to Trade Shifts</li>
+                            <li>Flexible Scheduling</li>
+                            <li>Perfect Attendance = Free Day Off</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title pl-2">Frequency of absent by Day</strong>
+                </div>
+                <div class="card-body">
+                    <div class="mx-auto d-block">
+                        {% if dategraph %}
+                            <img src="../static/images/overall/{{ dategraph }}/Day of the week.png"
+                                 alt="Day of the week.png"/>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title pl-2">Children</strong>
+                </div>
+                <div class="card-body">
+                    <div class="mx-auto d-block">
+                        {% if dategraph %}
+                            <img src="../static/images/overall/{{ dategraph }}/Son.png" alt="Son.png"/>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="copyright">
+                <p>Copyright © 2018 Chathuranga Kalana. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<!-- Jquery JS-->
+<script src="../static/vendor/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap JS-->
+<script src="../static/vendor/bootstrap-4.1/popper.min.js"></script>
+<script src="../static/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+<!-- Vendor JS       -->
+<script src="../static/vendor/slick/slick.min.js">
+</script>
+<script src="../static/vendor/wow/wow.min.js"></script>
+<script src="../static/vendor/animsition/animsition.min.js"></script>
+<script src="../static/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+</script>
+<script src="../static/vendor/counter-up/jquery.waypoints.min.js"></script>
+<script src="../static/vendor/counter-up/jquery.counterup.min.js">
+</script>
+<script src="../static/vendor/circle-progress/circle-progress.min.js"></script>
+<script src="../static/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../static/vendor/chartjs/Chart.bundle.min.js"></script>
+<script src="../static/vendor/select2/select2.min.js">
+</script>
+
+<!-- Main JS-->
+<script src="../static/js/main.js"></script>
+</html>
+<!-- end document-->

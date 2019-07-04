@@ -1,0 +1,113 @@
+{% include 'common/header.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Employees</title>
+
+</head>
+
+<body class="animsition">
+<div class="page-container">
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div>
+                    <h2>Employee ID: {{ id }}</h2><br>
+                </div>
+                <div class="row">
+                    {% if id %}
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-user"></i>
+                                    <strong class="card-title pl-2">Reasons for absenteeism</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mx-auto d-block">
+                                        <img class="mx-auto d-block"
+                                             src="../static/images/model/{{ id }}/reasons.png"
+                                             alt="Card image cap">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-user"></i>
+                                    <strong class="card-title pl-2">Month of Absent</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mx-auto d-block">
+                                        <img class="mx-auto d-block"
+                                             src="../static/images/model/{{ id }}/month.png"
+                                             alt="Card image cap">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-user"></i>
+                                    <strong class="card-title pl-2">Day of absent</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mx-auto d-block">
+                                        <img class="mx-auto d-block"
+                                             src="../static/images/model/{{ id }}/day.png"
+                                             alt="Card image cap">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+
+                                    <strong class="card-title pl-2">Actions</strong>
+                                    <div>
+                                       <ul>
+                                            <li>Reduce office stress.</li>
+                                            <li>Offer a generous paid time-off policy.</li>
+                                            <li>Invest in Child Care</li>
+                                            <li>Reward Good Attendance</li>
+                                            <li>Provide Employee Support</li>
+                                            <li>Display Significant Sporting Events from Within the Contact Centre</li>
+                                            <li>Allow Workers to Trade Shifts</li>
+                                            <li>Flexible Scheduling</li>
+                                            <li>Perfect Attendance = Free Day Off</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTAINER-->
+</div>
+
+</body>
+{% include 'common/footer.html' %}
+</html>
+<!-- end document-->

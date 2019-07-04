@@ -1,0 +1,60 @@
+{% include 'common/header.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Employees</title>
+
+</head>
+
+<body class="animsition">
+<div class="page-container">
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for id in unique_id %}
+                        <div class="col-md-4 d-flex">
+                                <div class="card" style="width: 100%">
+                                    <a href="http://127.0.0.1:5000/employee?id={{ id }}">
+                                    <div class="card-header">
+                                        <i class="fa fa-user"></i>
+                                        <strong class="card-title pl-2">Profile Card- {{ id }}</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mx-auto d-block">
+                                            <img class="rounded-circle mx-auto d-block" height="225px" width="225px"
+                                                 src="{{ url_for('static', filename='images/icon/'+id|string+'.png') }}"
+                                                 alt="Card image cap">
+                                            <h5 class="text-sm-center mt-2 mb-1">ID No : {{ id }} </h5>
+
+                                        </div>
+
+                                    </div>
+                                        </a>
+                                </div>
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTAINER-->
+</div>
+
+</body>
+{% include 'common/footer.html' %}
+</html>
+<!-- end document-->
